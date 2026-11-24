@@ -165,11 +165,13 @@ function stepPay(){
 }
 
 function payButtons(f){
-  const card = !S.static || !!f.paymentLink, pp = S.static && C.paypal && C.paypal.clientId;
+  const card = !S.static || !!f.paymentLink, ppOn = S.static && C.paypal && C.paypal.clientId;
+  const pp = ppOn && !st.promo.ok; // remise membre : uniquement par carte (Stripe vérifie le code)
   if (!card && !pp) return `<div class="paysoon"><b>Le paiement en ligne ouvre très bientôt.</b><p>Les réservations s'ouvrent dans quelques jours. Rejoins le canal WhatsApp du Skool pour être prévenu(e) dès l'ouverture et garder ta place.</p><a class="btn btn-lime btn-sm" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener">Être prévenu(e) sur WhatsApp →</a></div>
   <div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button><span></span></div>`;
   return `<div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button>${card ? `<button class="btn btn-lime" id="pay">Payer par carte ${S.eur(price(f))} <span class="arr">→</span></button>` : "<span></span>"}</div>
   ${pp ? `<div class="pp-wrap"><p class="pp-or">${card ? "ou" : "Paiement"} avec PayPal, en une fois ou en 4X sans frais</p><div id="pp-btns"></div><div class="pp-msg" data-pp-message data-pp-amount="${price(f)}" data-pp-style-text-color="white"></div></div>` : ""}
+  ${ppOn && st.promo.ok ? `<p class="pp-or" style="margin-top:14px">La remise membre Skool s'applique au paiement par carte.</p>` : ""}
   <p class="secure">🔒 Paiement sécurisé${card ? " par carte avec Stripe" : ""}${pp ? (card ? " ou PayPal" : " avec PayPal") : ""}</p>`;
 }
 
@@ -215,7 +217,7 @@ async function applyPromo(){
     } catch (e) { ok = false; }
   }
   st.promo = ok ? {code, ok: true, percent, msg: `Code appliqué : −${percent} % sur ton workshop.`}
-                : {code, ok: false, percent: 0, msg: "Ce code n'est pas valide. Vérifie-le dans le Skool."};
+                : {code, ok: false, percent: 0, msg: "Ce code n'est pas valide. Copie-le tel quel depuis le Skool."};
   render();
 }
 
