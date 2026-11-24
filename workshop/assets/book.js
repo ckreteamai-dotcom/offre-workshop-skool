@@ -256,7 +256,7 @@ async function pay(){
   if (S.static) {
     const u = new URL(f.paymentLink);
     if (st.info.email) u.searchParams.set("prefilled_email", st.info.email);
-    u.searchParams.set("client_reference_id", `${s.id}_${st.info.lastName || ""}`.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 190));
+    u.searchParams.set("client_reference_id", `${s.id}_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`); // aucune donnée perso dans l'adresse
     if (st.promo.ok) u.searchParams.set("prefilled_promo_code", st.promo.code);
     try { sessionStorage.setItem("skw-booking", JSON.stringify({formula: st.formula, session: st.session, info: {firstName: st.info.firstName}, promo: st.promo})); } catch (e) {}
     location.href = u.toString(); return;
