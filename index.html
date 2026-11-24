@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Skool · Formation IA — Offre Black Friday</title>
+<meta name="description" content="Apprends à créer des images et vidéos IA de niveau cinéma, et à en vivre. Rejoins le canal WhatsApp gratuit (400+ créateurs) ou le Skool (150+ membres).">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Le Skool · Formation IA — Offre Black Friday">
+<meta property="og:description" content="Apprends à créer des images et vidéos IA de niveau cinéma, et à en vivre. -50 % sur l'abonnement annuel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inter:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0E10;--ink2:#17171A;--ink3:#24242A;--line:rgba(255,255,255,.14);
+  --paper:#F4F1EC;--mut:#B9B4AF;--mut-d:#5B5651;
+  --red:#E3142D;--red-l:#FF3B4F;--red-d:#9C0A1C;--red-dd:#5E0612;
+  --wa:#25D366;--wa-d:#128C4A;--wam:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.68c-1.97 0-3.9-.53-5.58-1.53l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.63 10.63 0 0 1 5.36 16c0-5.9 4.8-10.69 10.7-10.69 5.88 0 10.66 4.8 10.66 10.7 0 5.89-4.79 10.67-10.68 10.67zm5.86-8c-.32-.16-1.9-.94-2.2-1.04-.29-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.26-.19.21-.37.24-.7.08-.31-.16-1.35-.5-2.57-1.59-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.25 3.44 5.46 4.82.76.33 1.36.53 1.82.68.77.24 1.46.2 2.02.12.61-.09 1.9-.78 2.16-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37z'/%3E%3C/svg%3E");
+  --dots:radial-gradient(rgba(255,255,255,.2) 22%,transparent 24%) 0 0/12px 12px;
+  --dots-ink:radial-gradient(rgba(0,0,0,.18) 22%,transparent 24%) 0 0/12px 12px;
+  --f-d:"Unbounded",system-ui,sans-serif;--f-b:"Inter",system-ui,sans-serif;--f-s:"Bagel Fat One","Unbounded",sans-serif;
+  --sticker:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(6px 7px 0 #000);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--ink);color:#fff;font:16px/1.6 var(--f-b);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--f-d);letter-spacing:-.025em;margin:0;line-height:1.08}
+p{margin:0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:700 12px/1.2 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--red-l)}
+.kicker::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px;flex:none}
+.tag{display:inline-block;background:var(--red);color:#fff;border:3px solid #000;border-radius:14px;padding:.02em .32em .08em;box-shadow:5px 5px 0 #000;transform:rotate(-1.5deg)}
+.tag.ink{background:#000;border-color:#000;box-shadow:5px 5px 0 var(--red)}
+.scrib{position:relative;white-space:nowrap;display:inline-block}
+.scrib svg{position:absolute;left:-2%;bottom:-.2em;width:104%;height:.42em;overflow:visible}
+.scrib path{fill:none;stroke:var(--red);stroke-width:7;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1s cubic-bezier(.6,0,.2,1) .35s}
+.in .scrib path,.scrib.in path{stroke-dashoffset:0}
+.light{background:var(--paper);color:var(--ink)}
+.light .kicker{color:var(--red)}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font:800 15px/1.2 var(--f-b);padding:15px 24px;border-radius:999px;border:2.5px solid #000;cursor:pointer;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 6px 0 var(--red-dd)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--red-dd)}
+.btn-red:active{transform:translateY(4px);box-shadow:0 2px 0 var(--red-dd)}
+.btn-wa{background:var(--wa);color:#04210f;box-shadow:0 6px 0 var(--wa-d)}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--wa-d)}
+.btn-wa:active{transform:translateY(4px);box-shadow:0 2px 0 var(--wa-d)}
+.btn-ghost{background:#fff;color:var(--ink);box-shadow:0 6px 0 #000}
+.btn-ghost:hover{transform:translateY(-2px);box-shadow:0 8px 0 #000}
+.btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(4px)}
+.ctas{display:flex;flex-wrap:wrap;gap:16px 18px}
+
+/* bandeau défilant */
+.ticker{background:var(--red);border-bottom:3px solid #000;overflow:hidden;white-space:nowrap;font:800 13px/1 var(--f-d);letter-spacing:.06em;text-transform:uppercase}
+.ticker .row{display:inline-flex;gap:0;padding:11px 0;animation:tick 32s linear infinite}
+.ticker span{padding:0 18px}
+.ticker i{font-style:normal;color:#000}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(14,14,16,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 15px var(--f-d);letter-spacing:.02em;white-space:nowrap}
+.logo .dot{width:30px;height:30px;border-radius:50%;background:var(--red);border:2.5px solid #000;box-shadow:0 0 0 2px #fff;display:grid;place-items:center}
+.logo .dot::after{content:"";width:9px;height:9px;border-radius:50%;background:#fff}
+.logo small{font:600 12px var(--f-b);color:var(--mut);letter-spacing:.04em}
+.nav .btn{padding:10px 16px;font-size:13.5px;box-shadow:0 4px 0 var(--wa-d)}
+.nav .btn svg{width:17px;height:17px}
+
+/* hero */
+.hero{position:relative;padding:64px 0 90px;overflow:hidden;
+  background:radial-gradient(60% 55% at 50% 62%,rgba(227,20,45,.38),transparent 70%),radial-gradient(40% 40% at 90% 10%,rgba(227,20,45,.18),transparent 70%),var(--ink)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--dots);opacity:.25;-webkit-mask:radial-gradient(70% 60% at 50% 60%,#000,transparent 75%);mask:radial-gradient(70% 60% at 50% 60%,#000,transparent 75%);pointer-events:none}
+.hero .wrap{position:relative;text-align:center}
+.hero h1{font-size:clamp(32px,5.3vw,66px);font-weight:900;margin:18px auto 0;max-width:1040px;line-height:1.16}
+.hero h1 .tag{margin:0 .06em}
+.hero .sub{max-width:660px;margin:26px auto 0;font-size:18px;color:#E6E1DC}
+.hero .ctas{justify-content:center;margin-top:30px}
+.stage{position:relative;max-width:900px;margin:64px auto 0;height:430px}
+.cards{display:flex;justify-content:center;gap:26px;height:100%}
+.pcard{position:relative;width:250px;aspect-ratio:3/4;align-self:center;border-radius:22px;overflow:hidden;border:3px solid #000;box-shadow:0 0 0 3px #fff,10px 10px 0 3px #000;background:#000;animation:float 6s ease-in-out infinite}
+.pcard img{width:100%;height:100%;object-fit:cover}
+.pcard:nth-child(1){transform:rotate(-5deg) translateY(14px);animation-delay:-1s}
+.pcard:nth-child(2){transform:rotate(1deg) translateY(-8px);animation-delay:-3s;z-index:2}
+.pcard:nth-child(3){transform:rotate(5deg) translateY(16px);animation-delay:-5s}
+@keyframes float{50%{translate:0 -10px}}
+.pill{position:absolute;font:800 12px/1 var(--f-b);border-radius:999px;padding:7px 11px;border:2px solid #000}
+.pcard .ia{top:12px;left:12px;background:#fff;color:#000}
+.pcard .lab{bottom:14px;left:50%;transform:translateX(-50%);background:#000;color:#fff;border-color:#fff;font:800 15px/1 var(--f-d);padding:10px 18px;white-space:nowrap}
+.burst{position:absolute;left:-84px;top:-46px;width:150px;height:150px;z-index:3;transform:rotate(-12deg)}
+.burst svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite;filter:drop-shadow(5px 6px 0 #000)}
+.burst div{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:#fff;line-height:1}
+.burst b{font:900 34px var(--f-d);letter-spacing:-.04em}
+.burst small{font:800 10.5px var(--f-b);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stage .mascot{position:absolute;right:-150px;bottom:-40px;height:470px;z-index:4;filter:var(--sticker)}
+.bubble{position:absolute;z-index:5;background:#fff;color:var(--ink);font:700 14px/1.35 var(--f-b);padding:12px 16px;border-radius:18px;border:3px solid #000;box-shadow:5px 5px 0 var(--red);text-align:left}
+.bubble::after{content:"";position:absolute;width:18px;height:18px;background:#fff;border-right:3px solid #000;border-bottom:3px solid #000}
+.stage .bubble{right:-168px;top:-58px;width:190px}
+.stage .bubble::after{bottom:-12px;right:44px;transform:rotate(45deg)}
+
+/* chiffres */
+.stats{background:var(--red);border-top:3px solid #000;border-bottom:3px solid #000;position:relative}
+.stats::before{content:"";position:absolute;inset:0;background:var(--dots);opacity:.35;pointer-events:none}
+.stats .wrap{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-top:34px;padding-bottom:34px}
+.stat b{display:block;font:900 clamp(30px,3.6vw,46px)/1 var(--f-d);letter-spacing:-.04em;color:#fff;text-shadow:3px 3px 0 #000}
+.stat span{display:block;margin-top:8px;font:600 14px/1.35 var(--f-b);color:#fff}
+
+/* sections */
+section{position:relative}
+.sec{padding:96px 0}
+.head{max-width:820px;margin:0 auto 46px;text-align:center}
+.head h2{font-size:clamp(28px,4.2vw,50px);font-weight:900;margin-top:14px;line-height:1.14}
+.head p{margin:18px auto 0;max-width:640px;font-size:17px;color:var(--mut)}
+.light .head p{color:var(--mut-d)}
+
+/* vidéos */
+.player{display:grid;grid-template-columns:1.75fr 1fr;gap:26px;align-items:start}
+.screen{border-radius:24px;border:3px solid #000;box-shadow:0 0 0 3px #fff,12px 12px 0 3px var(--red);overflow:hidden;background:#000}
+.screen video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vbox{position:relative}
+.vover{position:absolute;inset:0;display:none;place-content:center;justify-items:center;gap:14px;background:rgba(0,0,0,.35);color:#fff;font:700 15px var(--f-b);border:0;cursor:pointer;text-align:center}
+.vover.show{display:grid}
+.vover .pb{width:84px;height:84px;border-radius:50%;background:var(--red);border:3px solid #000;box-shadow:0 0 0 3px #fff,6px 6px 0 3px #000;display:grid;place-items:center}
+.vover .pb svg{width:34px;height:34px;margin-left:5px}
+.vover .bar{width:180px;height:8px;border-radius:8px;background:rgba(255,255,255,.25);overflow:hidden}
+.vover .bar i{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
+.now{padding:20px 22px 22px;background:var(--ink2);border-top:3px solid #000}
+.now h3{font-size:22px;font-weight:800}
+.now p{margin-top:8px;color:var(--mut);font-size:15.5px}
+.tabs{display:flex;flex-direction:column;gap:14px}
+.vtab{display:grid;grid-template-columns:128px 1fr;gap:14px;align-items:center;text-align:left;background:var(--ink2);color:#fff;border:2.5px solid var(--ink3);border-radius:18px;padding:10px;cursor:pointer;font:inherit;transition:transform .15s,border-color .15s,background .15s}
+.vtab:hover{transform:translateX(4px);border-color:#555}
+.vtab .th{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:16/9;border:2px solid #000}
+.vtab .th img{width:100%;height:100%;object-fit:cover}
+.vtab .th::after{content:"";position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:rgba(0,0,0,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='white'/%3E%3C/svg%3E") center/18px no-repeat;border:2px solid #fff}
+.vtab b{display:block;font:800 15px/1.25 var(--f-d)}
+.vtab small{display:block;margin-top:6px;color:var(--mut);font:600 12.5px var(--f-b)}
+.vtab.on{background:var(--red);border-color:#000;box-shadow:5px 5px 0 #000}
+.vtab.on small{color:#fff}
+.vtab.on .th::after{background-color:#000}
+.mid-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding:22px 26px;border-radius:22px;border:2.5px dashed rgba(255,255,255,.25)}
+.mid-cta p{font:700 18px/1.35 var(--f-d)}
+.mid-cta p span{color:var(--red-l)}
+
+/* comparaison */
+.cmp{max-width:1060px;margin:0 auto;display:grid;gap:14px}
+.crow{display:grid;grid-template-columns:1fr 64px 1.25fr;align-items:center}
+.cno,.cyes{display:flex;align-items:center;gap:14px;border-radius:16px;padding:16px 20px;font-weight:600}
+.cno{background:#E5E0D9;color:#6E6862;font-size:15.5px}
+.cno i{flex:none;width:24px;height:24px;color:var(--red)}
+.cyes{background:#fff;border:2.5px solid #000;box-shadow:5px 5px 0 #000;font-size:16px;color:var(--ink);font-weight:700}
+.cyes i{flex:none;width:30px;height:30px;border-radius:9px;background:var(--red);border:2px solid #000;display:grid;place-items:center}
+.cyes i svg{width:17px;height:17px}
+.carr{display:grid;place-items:center}
+.carr svg{width:44px;height:20px}
+.punch{text-align:center;margin-top:56px;font:900 clamp(22px,3.2vw,36px)/1.3 var(--f-d);letter-spacing:-.03em}
+.punch .hl{background:linear-gradient(transparent 58%,rgba(227,20,45,.28) 58%);padding:0 .12em}
+
+/* contenu du Skool */
+.content{background:var(--ink);overflow:hidden}
+.content::before{content:"";position:absolute;inset:0;background:var(--dots);opacity:.12;pointer-events:none}
+.tiles{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tile{background:#fff;color:var(--ink);border:3px solid #000;border-radius:22px;box-shadow:7px 7px 0 var(--red);overflow:hidden;transition:transform .2s}
+.tile:hover{transform:translateY(-6px) rotate(-.6deg)}
+.tile .top{position:relative;height:150px;background:var(--red);border-bottom:3px solid #000;overflow:hidden}
+.tile .top::before{content:"";position:absolute;inset:0;background:var(--dots);opacity:.45}
+.tile .lbl{position:absolute;left:18px;top:50%;transform:translateY(-58%) rotate(-3deg);background:#000;color:#fff;font:900 21px/1 var(--f-d);letter-spacing:-.02em;padding:9px 12px 11px;border-radius:8px;box-shadow:4px 4px 0 #fff}
+.tile .lbl::after{content:"";position:absolute;left:4px;right:30%;bottom:-14px;height:6px;border-radius:6px;background:#fff;transform:rotate(-2deg)}
+.tile .ico{position:absolute;right:16px;top:50%;width:80px;height:80px;transform:translateY(-50%) rotate(8deg);filter:drop-shadow(4px 5px 0 #000)}
+.tile .bd{padding:18px 20px 22px}
+.tile h3{font-size:17px;font-weight:800}
+.tile p{margin-top:7px;font-size:15px;color:var(--mut-d)}
+.content .mascot{position:absolute;right:max(10px,calc(50% - 720px));top:40px;height:300px;filter:var(--sticker);z-index:2}
+.content .bubble{right:max(150px,calc(50% - 580px));top:30px;width:200px}
+.content .bubble::after{right:-12px;top:22px;transform:rotate(-45deg)}
+
+/* preuves */
+.proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+.proof{display:flex;gap:16px;align-items:flex-start;background:var(--ink2);border:2.5px solid #000;border-radius:20px;padding:20px;box-shadow:0 0 0 2px var(--ink3)}
+.proof .av{flex:none;width:52px;height:52px;border-radius:50%;background:var(--red);border:3px solid #000;box-shadow:0 0 0 2px #fff;display:grid;place-items:center;font:900 20px var(--f-d)}
+.proof b{display:block;font:800 17px/1.25 var(--f-d)}
+.proof span{display:block;margin-top:6px;color:var(--mut);font-size:14.5px}
+
+/* widgets finaux */
+.final{padding:104px 0 120px;overflow:hidden;background:radial-gradient(50% 50% at 50% 30%,rgba(227,20,45,.32),transparent 72%),var(--ink)}
+.metal{display:inline-block;font:900 clamp(40px,7vw,92px)/1 var(--f-d);letter-spacing:-.04em;font-style:italic;transform:skewX(-8deg);background:linear-gradient(180deg,#fff 0%,#fff 42%,#9a9a9f 52%,#f2f2f4 72%,#cfcfd4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 0 var(--red-d)) drop-shadow(0 10px 18px rgba(0,0,0,.6))}
+.final .ttl{position:relative;isolation:isolate;display:inline-block;margin-top:26px;font-size:clamp(40px,7vw,92px)}
+.final .ttl .metal{font-size:1em}
+.final .head .kicker,.final .head p{position:relative;z-index:2}
+.final .circle{position:absolute;left:50%;top:50%;width:1.42em;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,var(--red-l),var(--red) 55%,var(--red-d));transform:translate(-50%,-50%);z-index:-1;box-shadow:0 0 80px rgba(227,20,45,.6)}
+.widgets{display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:stretch;max-width:1020px;margin:0 auto;position:relative}
+.wg{position:relative;border-radius:28px;border:3px solid #000;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+.wg:hover{transform:translateY(-6px)}
+.wg-wa{background:#0D1F14;box-shadow:0 0 0 3px #fff,12px 12px 0 3px var(--wa)}
+.wg-wa::after{content:"";position:absolute;right:-50px;bottom:40px;width:260px;height:260px;background:var(--wa);opacity:.07;-webkit-mask:var(--wam) center/contain no-repeat;mask:var(--wam) center/contain no-repeat;pointer-events:none}
+.wg-wa .in{position:relative;z-index:1}
+.wg-wa .in{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
+.wg-top{display:flex;align-items:center;gap:14px}
+.wa-ic{color:#fff;width:62px;height:62px;border-radius:18px;background:var(--wa);border:3px solid #000;display:grid;place-items:center;box-shadow:4px 4px 0 #000;flex:none}
+.wa-ic svg{width:36px;height:36px}
+.free{display:inline-block;background:#fff;color:#000;font:800 11px/1 var(--f-b);letter-spacing:.12em;padding:6px 9px;border-radius:999px;border:2px solid #000;margin-bottom:6px}
+.wg h3{font-size:24px;font-weight:900;line-height:1.12}
+.wg .txt{margin-top:18px;font-size:17px;line-height:1.5;color:#E8F5EC}
+.wg-wa .txt b{color:#fff}.wg-sk .txt b{color:var(--ink)}
+.big{display:flex;align-items:baseline;gap:10px;margin-top:22px}
+.big b{font:900 54px/1 var(--f-d);letter-spacing:-.05em;color:var(--wa)}
+.big span{font:700 15px/1.3 var(--f-b);color:#CFE8D7}
+.ok{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}
+.ok li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:15px}
+.ok li::before{content:"";flex:none;width:22px;height:22px;border-radius:7px;background:var(--wa) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat;border:2px solid #000}
+.wg .btn{margin-top:auto;width:100%;font-size:16px;padding:17px 22px}
+.wg-wa .spacer{flex:1;min-height:26px}
+.wg-sk{background:#fff;color:var(--ink);box-shadow:0 0 0 3px #fff,12px 12px 0 3px var(--red)}
+.wg-sk .cover{position:relative;aspect-ratio:2/1;background:#120708;border-bottom:3px solid #000;overflow:hidden}
+.wg-sk .cover img{width:100%;height:100%;object-fit:cover}
+.ribbon{position:absolute;top:16px;right:-46px;transform:rotate(35deg);background:var(--red);color:#fff;font:800 12px/1 var(--f-b);letter-spacing:.1em;padding:9px 52px;border-top:2px solid #000;border-bottom:2px solid #000;text-transform:uppercase}
+.wg-sk .in{padding:24px 28px 30px;display:flex;flex-direction:column;flex:1}
+.sk-name{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sk-url{font:600 13.5px var(--f-b);color:var(--mut-d)}
+.wg-sk .txt{color:#3B3733;margin-top:12px;font-size:16.5px}
+.sk-stats{display:grid;grid-template-columns:1fr 1fr;margin-top:20px;border-top:2px solid #E7E2DC;border-bottom:2px solid #E7E2DC}
+.sk-stats div{padding:14px 0;text-align:center}
+.sk-stats div+div{border-left:2px solid #E7E2DC}
+.sk-stats b{display:block;font:900 30px/1 var(--f-d);letter-spacing:-.04em}
+.sk-stats span{font:600 13px var(--f-b);color:var(--mut-d)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font:700 12.5px/1 var(--f-b);padding:8px 12px;border-radius:999px;background:#F4F1EC;border:2px solid #000}
+.chips span::before{content:"● ";color:var(--red);font-size:9px;vertical-align:2px}
+.offer{display:flex;align-items:center;gap:12px;margin:20px 0 22px;padding:12px 14px;border-radius:14px;background:#FFF0F1;border:2px dashed var(--red);font:700 14.5px/1.35 var(--f-b);color:var(--red-d)}
+.offer b{font:900 22px/1 var(--f-d);color:var(--red);letter-spacing:-.03em;flex:none}
+.offer s{color:var(--mut-d)}
+.final .mascot{position:absolute;left:-200px;bottom:-50px;height:340px;z-index:3;filter:var(--sticker)}
+.final .widgets>.bubble{left:-170px;bottom:304px;width:184px}
+.final .widgets>.bubble::after{bottom:-12px;left:70px;transform:rotate(45deg)}
+.cg-row{display:none;align-items:center;justify-content:center;gap:18px;margin:-24px auto 34px}
+.cg-row img{height:210px;filter:var(--sticker);flex:none}
+.cg-row .bubble{position:relative;max-width:230px}
+.cg-row .bubble::after{left:-12px;top:26px;transform:rotate(135deg)}
+.how{margin-top:22px;padding:16px 18px;border-radius:16px;background:rgba(37,211,102,.08);border:2px dashed rgba(37,211,102,.45)}
+.how b{display:block;font:800 13px/1 var(--f-b);letter-spacing:.1em;text-transform:uppercase;color:var(--wa);margin-bottom:10px}
+.how ol{margin:0;padding:0;list-style:none;counter-reset:h;display:grid;gap:8px}
+.how li{counter-increment:h;display:flex;gap:10px;align-items:center;font-size:14.5px;color:#DDEFE3}
+.how li::before{content:counter(h);flex:none;width:24px;height:24px;border-radius:50%;background:#fff;color:#000;font:800 12px/24px var(--f-d);text-align:center;border:2px solid #000}
+
+/* pied */
+footer{border-top:1px solid var(--line);padding:34px 0 110px;color:var(--mut);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none;color:#fff}
+
+/* barre mobile */
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;gap:10px;padding:10px;border-radius:22px;background:rgba(14,14,16,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:2px solid #000;box-shadow:0 0 0 2px var(--ink3),0 12px 30px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.sticky.show{transform:none}
+.sticky .btn{flex:1;padding:13px 10px;font-size:14px;box-shadow:0 4px 0 var(--wa-d)}
+.sticky .btn-red{box-shadow:0 4px 0 var(--red-dd)}
+
+/* apparitions */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+@media(max-width:1399px){.final .widgets>.mascot,.final .widgets>.bubble{display:none}.cg-row{display:flex}}
+@media(max-width:1100px){
+  .stage .mascot{right:-40px;height:400px}
+  .stage .bubble{right:-30px;top:-70px}
+  .content .mascot,.content .bubble{display:none}
+}
+@media(max-width:900px){
+  .player{grid-template-columns:1fr}
+  .tabs{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .vtab{flex:0 0 78%;scroll-snap-align:start;grid-template-columns:104px 1fr}
+  .tiles{grid-template-columns:1fr 1fr}
+  .proofs{grid-template-columns:1fr}
+  .widgets{grid-template-columns:1fr;max-width:560px}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .hero{padding:40px 0 64px}
+  .hero .sub{font-size:16px}
+  .hero .ctas{flex-direction:column;align-items:stretch;max-width:360px;margin-left:auto;margin-right:auto}
+  .stage{height:auto;margin-top:46px}
+  .cards{gap:10px;padding:0 4px}
+  .pcard{width:calc((100% - 20px)/3);border-radius:14px;box-shadow:0 0 0 2px #fff,5px 5px 0 2px #000}
+  .pcard .ia{top:7px;left:7px;font-size:9px;padding:5px 7px}
+  .pcard .lab{font-size:11px;padding:7px 10px;bottom:9px}
+  .burst{width:96px;height:96px;left:-12px;top:-40px}
+  .burst b{font-size:22px}.burst small{font-size:8px;margin-top:3px}
+  .stage .mascot{display:block;position:relative;right:auto;bottom:auto;height:230px;margin:34px 9% 0 auto}
+  .stage .bubble{right:auto;left:0;top:auto;bottom:112px;width:min(188px,50vw)}
+  .stage .bubble::after{bottom:auto;top:22px;right:-12px;transform:rotate(-45deg)}
+  .cg-row img{height:170px}.cg-row .bubble{font-size:13.5px}
+  .sec{padding:70px 0}
+  .crow{grid-template-columns:1fr;gap:6px}
+  .carr{display:none}
+  .cno{font-size:14px;padding:10px 14px;background:transparent;padding-left:4px}
+  .tiles{grid-template-columns:1fr}
+  .tile .top{height:130px}
+  .mid-cta{flex-direction:column;align-items:stretch;text-align:center}
+  .mid-cta .ctas{flex-direction:column}
+  .sticky{display:flex}
+  .nav .btn span{display:none}
+  .nav .btn{padding:10px 12px}
+  .logo small{display:none}
+  .wg-wa .in,.wg-sk .in{padding:24px 22px 26px}
+  .big b{font-size:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.scrib path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tick"><span>Offre Black Friday</span><i>✦</i><span>-50&nbsp;% sur l'abonnement annuel du Skool</span><i>✦</i><span>490&nbsp;$ au lieu de 990&nbsp;$</span><i>✦</i><span>Canal WhatsApp gratuit</span><i>✦</i></div></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="dot"></span>CERËGA · CKRÉ <small>Formation IA</small></a>
+    <a class="btn btn-wa" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><use href="#wa"/></svg><span>Canal WhatsApp gratuit</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker rv">Tu viens de voir la pub&nbsp;? T'es au bon endroit</div>
+    <h1 class="rv d1">Apprends à créer des images &amp; vidéos IA <span class="tag">de niveau cinéma</span> et à <span class="scrib">en vivre.<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4 14 C 70 4, 150 4, 296 10"/></svg></span></h1>
+    <p class="sub rv d2">Pubs de marque, films, contenus qui cartonnent sur les réseaux&nbsp;: au Skool, on te montre tout, de la première image à la vidéo finie.</p>
+    <div class="ctas rv d3">
+      <a class="btn btn-wa" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><use href="#wa"/></svg>Rejoindre le canal WhatsApp</a>
+      <a class="btn btn-red" href="https://www.skool.com/formation-ia" target="_blank" rel="noopener">Découvrir le Skool <span class="arr">→</span></a>
+    </div>
+
+    <div class="stage rv d4">
+      <div class="burst"><svg viewBox="0 0 100 100"><path id="bpath" fill="#E3142D" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/></svg><div><b>-50&nbsp;%</b><small>Black Friday</small></div></div>
+      <div class="cards">
+        <figure class="pcard" style="margin:0"><img src="img/card-cinema.jpg" alt="Soldat romain dans une bataille, image générée en IA"><span class="pill ia">100&nbsp;% IA</span><span class="pill lab">Cinéma</span></figure>
+        <figure class="pcard" style="margin:0"><img src="img/card-pub.jpg" alt="Gros plan beauté façon pub de joaillerie, généré en IA"><span class="pill ia">100&nbsp;% IA</span><span class="pill lab">Pub</span></figure>
+        <figure class="pcard" style="margin:0"><img src="img/card-cartoon.jpg" alt="Personnage cartoon punk à la lueur d'une bougie, généré en IA"><span class="pill ia">100&nbsp;% IA</span><span class="pill lab">Cartoon</span></figure>
+      </div>
+      <div class="bubble">Tout ça, c'est de l'IA. Et tu peux apprendre à le faire&nbsp;!</div>
+      <img class="mascot" src="img/cerega-salut.webp" alt="Cerega en cartoon qui fait coucou">
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat rv"><b data-n="400">400+</b><span>créateurs IA sur le canal WhatsApp</span></div>
+    <div class="stat rv d1"><b data-n="150">150+</b><span>membres dans le Skool</span></div>
+    <div class="stat rv d2"><b data-n="50000">50&nbsp;000+</b><span>abonnés cumulés sur nos réseaux</span></div>
+    <div class="stat rv d3"><b data-n="80000" data-s=" €">80&nbsp;000&nbsp;€</b><span>de revenus documentés par nos membres</span></div>
+  </div>
+</section>
+
+<!-- VIDÉOS -->
+<section class="sec" id="videos">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">Le Skool en vidéo</div>
+      <h2>Regarde ce qu'on crée. Puis apprends <span class="scrib">à le faire.<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4 12 C 90 3, 190 5, 296 11"/></svg></span></h2>
+      <p>Trois vidéos, trois facettes du Skool. Toutes réalisées en IA par l'équipe qui va te former.</p>
+    </div>
+    <div class="player rv d1">
+      <div class="screen">
+        <div class="vbox"><video id="vid" controls playsinline preload="none" poster="img/poster-cinema.jpg" controlslist="nodownload" data-src="hls/cinema/index.txt"></video><button class="vover" id="vover" type="button" aria-label="Lire la vidéo"><span class="pb"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="#fff"/></svg></span><span class="msg" id="vmsg"></span><span class="bar" hidden><i id="vbar"></i></span></button></div>
+        <div class="now"><h3 id="vt">Tous les genres du cinéma</h3><p id="vd">Péplum, thriller, horreur, cartoon, film de mafia… Un seul créateur, tous les genres du cinéma. C'est exactement ce qu'on t'apprend à faire.</p></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="vtab on" role="tab" aria-selected="true" data-src="hls/cinema/index.txt" data-poster="img/poster-cinema.jpg" data-t="Tous les genres du cinéma" data-d="Péplum, thriller, horreur, cartoon, film de mafia… Un seul créateur, tous les genres du cinéma. C'est exactement ce qu'on t'apprend à faire."><span class="th"><img src="img/poster-cinema.jpg" alt=""></span><span><b>Tous les genres du cinéma</b><small>Vidéo vitrine · 1&nbsp;min&nbsp;28</small></span></button>
+        <button class="vtab" role="tab" aria-selected="false" data-src="hls/pub/index.txt" data-poster="img/poster-pub.jpg" data-t="Des pubs de marque, 100 % IA" data-d="Joaillerie, sneakers, montre de luxe : des pubs tournées dans un studio qui n'existe pas. Le genre de vidéo que les marques paient."><span class="th"><img src="img/poster-pub.jpg" alt=""></span><span><b>Des pubs de marque</b><small>Studio IA · 1&nbsp;min&nbsp;36</small></span></button>
+        <button class="vtab" role="tab" aria-selected="false" data-src="hls/reseaux/index.txt" data-poster="img/poster-reseaux.jpg" data-t="Faire exploser tes réseaux" data-d="Des contenus qui font des millions de vues, et la méthode pour les créer. Dans notre Skool, on te montre tout."><span class="th"><img src="img/poster-reseaux.jpg" alt=""></span><span><b>Faire exploser tes réseaux</b><small>Présentation · 39&nbsp;s</small></span></button>
+      </div>
+    </div>
+    <div class="mid-cta rv">
+      <p>Envie d'en voir plus&nbsp;? <span>Commence gratuitement</span> avec les 400+ créateurs du canal.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><use href="#wa"/></svg>Rejoindre le canal</a>
+        <a class="btn btn-ghost" href="https://www.skool.com/formation-ia" target="_blank" rel="noopener">Voir le Skool <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">La différence</div>
+      <h2>Pourquoi <span class="tag" style="color:#fff">le Skool</span> plutôt qu'ailleurs</h2>
+    </div>
+    <div class="cmp">
+      <div class="crow rv"><div class="cno"><i><svg viewBox="0 0 24 24"><use href="#x"/></svg></i>Des heures de tutos, zéro client</div><div class="carr"><svg viewBox="0 0 44 20"><use href="#ar"/></svg></div><div class="cyes"><i><svg viewBox="0 0 24 24"><use href="#ck"/></svg></i>On t'apprend à vendre tes vidéos, pas juste à les générer</div></div>
+      <div class="crow rv d1"><div class="cno"><i><svg viewBox="0 0 24 24"><use href="#x"/></svg></i>Des tutos YouTube déjà dépassés</div><div class="carr"><svg viewBox="0 0 44 20"><use href="#ar"/></svg></div><div class="cyes"><i><svg viewBox="0 0 24 24"><use href="#ck"/></svg></i>Des lives pour suivre les outils du moment</div></div>
+      <div class="crow rv d2"><div class="cno"><i><svg viewBox="0 0 24 24"><use href="#x"/></svg></i>Apprendre seul dans ton coin</div><div class="carr"><svg viewBox="0 0 44 20"><use href="#ar"/></svg></div><div class="cyes"><i><svg viewBox="0 0 24 24"><use href="#ck"/></svg></i>150+ créateurs qui avancent ensemble</div></div>
+      <div class="crow rv d3"><div class="cno"><i><svg viewBox="0 0 24 24"><use href="#x"/></svg></i>De la théorie qu'on oublie en une semaine</div><div class="carr"><svg viewBox="0 0 44 20"><use href="#ar"/></svg></div><div class="cyes"><i><svg viewBox="0 0 24 24"><use href="#ck"/></svg></i>Des exercices et des concours pour pratiquer</div></div>
+      <div class="crow rv d4"><div class="cno"><i><svg viewBox="0 0 24 24"><use href="#x"/></svg></i>Des «&nbsp;experts&nbsp;» qui n'ont jamais rien produit</div><div class="carr"><svg viewBox="0 0 44 20"><use href="#ar"/></svg></div><div class="cyes"><i><svg viewBox="0 0 24 24"><use href="#ck"/></svg></i>Des cours par l'équipe de CKRÉ, une vraie boîte de production</div></div>
+      <div class="crow rv d5"><div class="cno"><i><svg viewBox="0 0 24 24"><use href="#x"/></svg></i>Payer ta formation plein pot</div><div class="carr"><svg viewBox="0 0 44 20"><use href="#ar"/></svg></div><div class="cyes"><i><svg viewBox="0 0 24 24"><use href="#ck"/></svg></i>-50&nbsp;% sur l'abonnement annuel pendant le Black Friday</div></div>
+    </div>
+    <p class="punch rv">Les outils, tout le monde les a.<br><span class="hl">Savoir s'en servir, ça s'apprend.</span></p>
+  </div>
+</section>
+
+<!-- CONTENU -->
+<section class="sec content">
+  <div class="bubble">Je t'explique tout, pas à pas&nbsp;!</div>
+  <img class="mascot" src="img/cerega-debutant.webp" alt="Cerega en cartoon avec un crayon géant">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">Dans le Skool</div>
+      <h2>Tout ce qu'il te faut, du débutant <span class="scrib">au pro.<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4 13 C 80 4, 170 3, 296 9"/></svg></span></h2>
+      <p>Une formation en ligne ultra complète pour passer à la vitesse supérieure, et une communauté pour ne jamais rester bloqué.</p>
+    </div>
+    <div class="tiles">
+      <article class="tile rv"><div class="top"><span class="lbl">COURS</span><svg class="ico" viewBox="0 0 96 96"><rect x="10" y="20" width="76" height="52" rx="10" fill="#fff" stroke="#000" stroke-width="5"/><path d="M42 34l18 12-18 12z" fill="#E3142D" stroke="#000" stroke-width="4" stroke-linejoin="round"/><rect x="30" y="78" width="36" height="8" rx="4" fill="#fff" stroke="#000" stroke-width="4"/></svg></div><div class="bd"><h3>Des cours pas à pas</h3><p>De la première image à la vidéo finie&nbsp;: image, vidéo, son, montage.</p></div></article>
+      <article class="tile rv d1"><div class="top"><span class="lbl">LIVES</span><svg class="ico" viewBox="0 0 96 96"><circle cx="48" cy="48" r="13" fill="#fff" stroke="#000" stroke-width="5"/><path d="M28 28a28 28 0 0 0 0 40M68 28a28 28 0 0 1 0 40M17 17a44 44 0 0 0 0 62M79 17a44 44 0 0 1 0 62" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M28 28a28 28 0 0 0 0 40M68 28a28 28 0 0 1 0 40M17 17a44 44 0 0 0 0 62M79 17a44 44 0 0 1 0 62" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" opacity=".35"/></svg></div><div class="bd"><h3>Des lives Q&amp;A</h3><p>Pose tes questions en direct et suis les outils du moment avec nous.</p></div></article>
+      <article class="tile rv d2"><div class="top"><span class="lbl">EXERCICES</span><svg class="ico" viewBox="0 0 96 96"><circle cx="48" cy="48" r="36" fill="#fff" stroke="#000" stroke-width="5"/><circle cx="48" cy="48" r="22" fill="#E3142D" stroke="#000" stroke-width="4"/><circle cx="48" cy="48" r="9" fill="#fff" stroke="#000" stroke-width="4"/></svg></div><div class="bd"><h3>Des exercices concrets</h3><p>Tu pratiques sur de vrais cas, pour progresser vite et pour de bon.</p></div></article>
+      <article class="tile rv"><div class="top"><span class="lbl">CONCOURS</span><svg class="ico" viewBox="0 0 96 96"><path d="M28 14h40v20a20 20 0 0 1-40 0z" fill="#fff" stroke="#000" stroke-width="5" stroke-linejoin="round"/><path d="M28 20H14v6a14 14 0 0 0 14 14M68 20h14v6a14 14 0 0 1-14 14" fill="none" stroke="#000" stroke-width="5"/><path d="M42 54h12v14H42z" fill="#fff" stroke="#000" stroke-width="5"/><rect x="28" y="68" width="40" height="14" rx="4" fill="#E3142D" stroke="#000" stroke-width="5"/></svg></div><div class="bd"><h3>Des concours</h3><p>Montre ton travail, confronte-toi aux autres et fais-toi remarquer.</p></div></article>
+      <article class="tile rv d1"><div class="top"><span class="lbl">COMMU</span><svg class="ico" viewBox="0 0 96 96"><circle cx="30" cy="36" r="11" fill="#fff" stroke="#000" stroke-width="5"/><circle cx="66" cy="36" r="11" fill="#fff" stroke="#000" stroke-width="5"/><path d="M12 76c2-14 10-20 18-20s16 6 18 20zM48 76c2-14 10-20 18-20s16 6 18 20z" fill="#fff" stroke="#000" stroke-width="5" stroke-linejoin="round"/><circle cx="48" cy="30" r="12" fill="#E3142D" stroke="#000" stroke-width="5"/></svg></div><div class="bd"><h3>150+ créateurs</h3><p>Partage tes créas, récupère des retours et avance avec des gens qui font comme toi.</p></div></article>
+      <article class="tile rv d2"><div class="top"><span class="lbl">RESSOURCES</span><svg class="ico" viewBox="0 0 96 96"><path d="M12 26h26l8 8h38v44H12z" fill="#fff" stroke="#000" stroke-width="5" stroke-linejoin="round"/><path d="M12 40h72" stroke="#000" stroke-width="5"/><path d="M30 56h36M30 66h22" stroke="#E3142D" stroke-width="6" stroke-linecap="round"/></svg></div><div class="bd"><h3>Prompts &amp; workflows</h3><p>Des guides et des méthodes prêts à l'emploi, pour ne plus cramer tes crédits.</p></div></article>
+    </div>
+
+    <div class="head rv" style="margin-top:96px;margin-bottom:34px">
+      <div class="kicker">Ils sont passés à la vitesse supérieure</div>
+    </div>
+    <div class="proofs">
+      <div class="proof rv"><div class="av">N</div><div><b>Nicolas</b><span>décroche des contrats grâce à ses vidéos IA.</span></div></div>
+      <div class="proof rv d1"><div class="av">M</div><div><b>Marius</b><span>1<sup>er</sup> prix à Cannes.</span></div></div>
+      <div class="proof rv d2"><div class="av">V</div><div><b>Virginie</b><span>a multiplié sa visibilité par 10.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WIDGETS FINAUX -->
+<section class="final" id="rejoindre">
+  <div class="wrap">
+    <div class="head rv" style="margin-bottom:64px">
+      <div class="kicker">Choisis ta porte d'entrée</div>
+      <div><span class="ttl"><span class="circle"></span><span class="metal">Rejoins-nous</span></span></div>
+      <p style="color:#E6E1DC">Commence gratuitement avec la communauté, ou passe directement à la formation complète.</p>
+    </div>
+
+    <div class="cg-row"><img src="img/cerega-calendrier.webp" alt="Cerega en cartoon qui montre une date sur un calendrier"><div class="bubble">Black Friday&nbsp;: c'est le moment ou jamais&nbsp;!</div></div>
+
+    <div class="widgets">
+      <div class="bubble">Black Friday&nbsp;: c'est le moment ou jamais&nbsp;!</div>
+      <img class="mascot" src="img/cerega-calendrier.webp" alt="Cerega en cartoon qui montre une date sur un calendrier">
+
+      <a class="wg wg-wa rv" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener" style="text-decoration:none;color:#fff">
+        <div class="in">
+          <div class="wg-top"><span class="wa-ic"><svg viewBox="0 0 32 32"><use href="#wa" fill="#fff"/></svg></span><div><span class="free">GRATUIT</span><h3>Le canal WhatsApp du Skool</h3></div></div>
+          <p class="txt">Plus de <b>400 créateurs IA</b> tous ensemble pour un but&nbsp;: <b>s'améliorer en créant ensemble.</b></p>
+          <div class="big"><b>400+</b><span>créateurs IA<br>déjà dedans</span></div>
+          <ul class="ok"><li>Partage tes créas, pose tes questions</li><li>Accède aux ressources gratuites</li><li>Rencontre d'autres créateurs IA</li></ul>
+          <div class="how"><b>En 30 secondes</b><ol><li>Clique sur «&nbsp;Rejoindre le canal&nbsp;»</li><li>Valide dans WhatsApp</li><li>Présente-toi et montre ta première créa</li></ol></div>
+          <div class="spacer"></div>
+          <span class="btn btn-wa"><svg viewBox="0 0 32 32"><use href="#wa"/></svg>Rejoindre le canal <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a class="wg wg-sk rv d1" href="https://www.skool.com/formation-ia" target="_blank" rel="noopener" style="text-decoration:none">
+        <div class="cover"><img src="img/skool-cover.jpg" alt="Rejoins le Skool, Formation IA, par CERËGA · CKRÉ"><span class="ribbon">Black Friday</span></div>
+        <div class="in">
+          <div class="sk-name"><h3>Le Skool · Formation IA</h3><span class="sk-url">skool.com/formation-ia</span></div>
+          <p class="txt">La formation en ligne ultra complète pour <b>passer à la vitesse supérieure</b>&nbsp;: créer des images et vidéos IA de niveau pro, et en faire un revenu.</p>
+          <div class="sk-stats"><div><b>150+</b><span>membres</span></div><div><b>4 en 1</b><span>cours · lives · exos · concours</span></div></div>
+          <div class="offer"><b>-50&nbsp;%</b><span>sur l'abonnement annuel<br>490&nbsp;$ au lieu de <s>990&nbsp;$</s></span></div>
+          <span class="btn btn-red">Rejoindre le Skool <span class="arr">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>CERËGA · CKRÉ — Le Skool, formation IA · <span id="yr">2026</span></span>
+    <span><a href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener">Canal WhatsApp</a> · <a href="https://www.skool.com/formation-ia" target="_blank" rel="noopener">Le Skool</a></span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-wa" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><use href="#wa"/></svg>WhatsApp</a>
+  <a class="btn btn-red" href="https://www.skool.com/formation-ia" target="_blank" rel="noopener">Le Skool -50&nbsp;%</a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.68c-1.97 0-3.9-.53-5.58-1.53l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.63 10.63 0 0 1 5.36 16c0-5.9 4.8-10.69 10.7-10.69 5.88 0 10.66 4.8 10.66 10.7 0 5.89-4.79 10.67-10.68 10.67zm5.86-8c-.32-.16-1.9-.94-2.2-1.04-.29-.11-.5-.16-.72.16-.21.32-.83 1.04-1.01 1.26-.19.21-.37.24-.7.08-.31-.16-1.35-.5-2.57-1.59-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.25 3.44 5.46 4.82.76.33 1.36.53 1.82.68.77.24 1.46.2 2.02.12.61-.09 1.9-.78 2.16-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37z"/></symbol>
+  <symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></symbol>
+  <symbol id="ck" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ar" viewBox="0 0 44 20"><path d="M3 11 C 14 7, 26 7, 38 10" fill="none" stroke="#E3142D" stroke-width="3.4" stroke-linecap="round"/><path d="M31 3.5l8 6.8-9 4.4" fill="none" stroke="#E3142D" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<script src="js/hls.light.min.js"></script>
+<script>
+(function(){
+  // étoile du badge Black Friday
+  var p=[],n=18;for(var i=0;i<n*2;i++){var a=Math.PI*i/n-Math.PI/2,r=i%2?40:49;p.push((50+r*Math.cos(a)).toFixed(2)+' '+(50+r*Math.sin(a)).toFixed(2));}
+  document.getElementById('bpath').setAttribute('d','M'+p.join(' L')+' Z');
+
+  // bandeau défilant : on double le contenu pour une boucle continue
+  var t=document.getElementById('tick');t.innerHTML=t.innerHTML+t.innerHTML+t.innerHTML+t.innerHTML;
+
+  // apparitions au scroll
+  var els=document.querySelectorAll('.rv,.scrib');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  } else els.forEach(function(el){el.classList.add('in');});
+
+  // compteurs
+  function fmt(v){return v.toLocaleString('fr-FR').replace(/ |\s/g,' ');}
+  var cs=document.querySelectorAll('.stat b[data-n]');
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;co.unobserve(e.target);
+    var el=e.target,to=+el.dataset.n,suf=el.dataset.s||'+',t0=null;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=fmt(v)+(suf===' €'?' €':suf);if(k<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  });},{threshold:.6});
+  cs.forEach(function(c){co.observe(c);});
+
+  // lecteur vidéo à onglets : vidéos découpées en segments, lues partout sans fichier vidéo à télécharger
+  var vid=document.getElementById('vid'),vt=document.getElementById('vt'),vd=document.getElementById('vd');
+  var ov=document.getElementById('vover'),vmsg=document.getElementById('vmsg'),vbar=document.getElementById('vbar');
+  var hls=null,started=false,token=0,cur=vid.dataset.src;
+  var mse=!!(window.Hls&&Hls.isSupported());
+  function tryPlay(){var p=vid.play();if(p&&p.catch)p.catch(function(){});}
+  function overlay(mode,pct){
+    ov.classList.toggle('show',mode!=='off');
+    ov.querySelector('.pb').hidden=mode!=='play';
+    ov.querySelector('.bar').hidden=mode!=='load';
+    vmsg.textContent=mode==='load'?'Chargement de la vidéo… '+Math.round(pct*100)+' %':'';
+    if(mode==='load')vbar.style.width=Math.round(pct*100)+'%';
+  }
+  // mode principal : lecture en streaming (Chrome, Firefox, Edge, Android, Safari Mac et iPhone récents)
+  function loadHls(src,auto){
+    if(hls){hls.destroy();hls=null;}
+    started=false;vid.removeAttribute('src');
+    hls=new Hls({autoStartLoad:false,maxBufferLength:24});
+    if('disableRemotePlayback' in vid)vid.disableRemotePlayback=true;
+    hls.on(Hls.Events.ERROR,function(e,d){
+      if(!d.fatal)return;
+      if(d.type===Hls.ErrorTypes.NETWORK_ERROR)hls.startLoad();
+      else if(d.type===Hls.ErrorTypes.MEDIA_ERROR)hls.recoverMediaError();
+    });
+    hls.loadSource(src);hls.attachMedia(vid);
+    if(auto)hls.once(Hls.Events.MANIFEST_PARSED,function(){started=true;hls.startLoad();tryPlay();});
+  }
+  vid.addEventListener('play',function(){if(hls&&!started){started=true;hls.startLoad();}});
+  // mode de secours (navigateurs sans streaming) : on rassemble les segments en une seule vidéo en mémoire
+  function loadBlob(src){
+    var my=++token,base=src.replace(/[^\/]+$/,'');
+    if(vid.src&&vid.src.indexOf('blob:')===0)URL.revokeObjectURL(vid.src);
+    vid.removeAttribute('src');vid.load();overlay('load',0);
+    fetch(src).then(function(r){return r.text();}).then(function(t){
+      var m=t.match(/#EXT-X-MAP:URI="([^"]+)"/),list=t.split(/\r?\n/).filter(function(l){return l&&l.charAt(0)!=='#';});
+      var urls=(m?[m[1]]:[]).concat(list).map(function(u){return base+u;}),parts=new Array(urls.length),done=0,i=0;
+      return new Promise(function(res,rej){
+        function next(){
+          if(my!==token)return rej('annulé');
+          if(i>=urls.length)return;
+          var k=i++;fetch(urls[k]).then(function(r){if(!r.ok)throw r.status;return r.arrayBuffer();}).then(function(b){parts[k]=b;done++;overlay('load',done/urls.length);if(done===urls.length)res();else next();}).catch(rej);
+        }
+        next();next();next();
+      }).then(function(){
+        if(my!==token)return;
+        vid.src=URL.createObjectURL(new Blob(parts,{type:'video/mp4'}));
+        overlay('off');tryPlay();
+      });
+    }).catch(function(){if(my===token){overlay('play');vmsg.textContent='Connexion lente, touche pour réessayer';}});
+  }
+  vid.addEventListener('error',function(){if(!mse&&vid.src){overlay('play');ov.querySelector('.pb').hidden=true;vmsg.textContent='Ouvre cette page dans Safari ou Chrome pour voir la vidéo.';}});
+  function load(src,auto){
+    cur=src;
+    if(mse){overlay('off');loadHls(src,auto);}
+    else if(auto)loadBlob(src);
+    else{token++;vid.removeAttribute('src');overlay('play');}
+  }
+  ov.addEventListener('click',function(){if(!mse)loadBlob(cur);});
+  vid.addEventListener('contextmenu',function(e){e.preventDefault();});
+  load(cur,false);
+  document.querySelectorAll('.vtab').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.classList.contains('on')){if(mse||vid.src)tryPlay();else loadBlob(cur);return;}
+      document.querySelectorAll('.vtab').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false');});
+      b.classList.add('on');b.setAttribute('aria-selected','true');
+      vid.pause();vid.poster=b.dataset.poster;vt.textContent=b.dataset.t;vd.textContent=b.dataset.d;
+      load(b.dataset.src,true);
+      if(innerWidth<900)vid.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+
+  // barre d'action mobile, visible après le haut de page
+  var st=document.getElementById('sticky'),hero=document.querySelector('.hero');
+  function upd(){var r=hero.getBoundingClientRect();st.classList.toggle('show',r.bottom<60&&document.getElementById('rejoindre').getBoundingClientRect().top>innerHeight*.4);}
+  addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
+</body>
+</html>
