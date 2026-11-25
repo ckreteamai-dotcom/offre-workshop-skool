@@ -260,6 +260,7 @@ async function pay(){
   if (!$("#cgv").checked) { err.textContent = "Coche la case pour confirmer ta réservation."; return; }
   if (S.left(s) <= 0) { err.textContent = "Désolé, cette session vient d'être complète. Choisis une autre date."; return; }
   const btn = this instanceof HTMLElement ? this : $("#pay"); btn.disabled = true; btn.textContent = "Un instant…";
+  if (window.SKWT) window.SKWT("paiement", btn.id === "pay3" ? "klarna_3x" : "en_une_fois", st.formula);
   if (S.static) {
     const u = new URL(f.paymentLink);
     if (st.info.email) u.searchParams.set("prefilled_email", st.info.email);
@@ -320,6 +321,7 @@ function render(){
   $("#panel").innerHTML = [null, stepFormula, stepDate, stepInfo, stepPay, stepDone][st.step]();
   S.mascots($("#panel")); bind();
   if (st.step === 4) mountPayPal();
+  if (window.SKWT && render.tracked !== st.step) { render.tracked = st.step; window.SKWT("etape", st.step, st.formula); } // mesure d'audience anonyme (stats.js)
 }
 
 document.addEventListener("skw-ready", async () => {

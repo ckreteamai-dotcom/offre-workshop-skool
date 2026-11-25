@@ -1,0 +1,8 @@
+name = "skool-workshop-stats"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "skool-workshop-stats"
+database_id = "e88c6fb9-37a7-42f1-98e0-7d48e34d2f69"
