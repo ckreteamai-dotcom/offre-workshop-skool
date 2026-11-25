@@ -69,7 +69,7 @@ window.SKOOL_CATALOG = {
         "Retours et finitions avant livraison",
         "Ton film IA de 30 à 60 secondes, fini"
       ],
-      paymentLink: ""
+      paymentLink: "https://buy.stripe.com/fZu9AV2sWa0VgrY0lB6Ri02"
     },
     {
       id: "complet",
@@ -94,7 +94,7 @@ window.SKOOL_CATALOG = {
         "Tu repars avec 3 films et tes workflows",
         "15 participants maximum"
       ],
-      paymentLink: "",
+      paymentLink: "https://buy.stripe.com/4gMeVf9VogpjcbI2tJ6Ri03",
       best: true
     }
   ],
