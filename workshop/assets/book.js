@@ -144,6 +144,11 @@ function stepInfo(){
 /* ---------- étape 4 : paiement ---------- */
 function stepPay(){
   const f = S.formula(st.formula), s = S.session(st.session), pr = st.promo;
+  if (new URLSearchParams(location.search).get("test-paiement") === "1" && s?.id === "pf-2026-12-17") {
+    return `<h2>Paiement</h2><p class="mut">Mode test. Aucun débit.</p>
+      <a class="btn btn-lime" href="https://buy.stripe.com/test_4gMfZicj6dfY36rbiE3F600">Payer 490 €</a>
+      <div class="nav-step"><button class="btn btn-ghost" id="back" type="button">← Coordonnées</button></div>`;
+  }
   return `<h2>Dernière étape.</h2><p class="mut">Ta place est bloquée dès que le paiement est validé.</p>
   <div class="choice">
     <div class="opt" style="cursor:default"><span class="dot bg-${f.color}">${f.days}j</span><span><h4>${esc(f.name)} · ${S.range(s)}</h4><p>${esc(st.info.firstName)} ${esc(st.info.lastName)} · ${esc(st.info.email)}</p></span><span class="pr">${pr.ok ? `<s>${S.eur(f.price)}</s>` : ""}${S.eur(price(f))}</span></div>
