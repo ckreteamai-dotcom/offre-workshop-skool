@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const urgent = S.left(hot) <= 3, s0 = urgent ? hot : nxt, f = S.formula(s0.formula), l = S.left(s0);
       const msg = urgent
         ? `<b>Attention :</b> plus que ${l} place${l > 1 ? "s" : ""} sur « ${f.name} » (${S.range(s0)})`
-        : `<b>Places limitées :</b> une seule session par formule, de 5 à 15 places seulement. Prochaine : ${f.nav || f.short}, ${S.range(s0)}`;
+        : `<b>Places limitées :</b> une seule session par formule, de 5 à 10 places seulement. Prochaine : ${f.nav || f.short}, ${S.range(s0)}`;
       nav.insertAdjacentHTML("afterend", `<a class="alertbar ${urgent ? "hot" : ""}" href="reserver.html#${s0.id}"><i></i><span>${msg}</span><em>Réserver →</em></a>`);
     }
     document.dispatchEvent(new CustomEvent("skw-ready"));
