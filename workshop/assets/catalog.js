@@ -79,7 +79,7 @@ window.SKOOL_CATALOG = {
       short: "10 jours · 2 semaines",
       days: 10,
       price: 1390,
-      capacity: 15,
+      capacity: 10,
       level: "Tous niveaux motivés",
       color: "pink",
       mascot: "duo",
@@ -92,7 +92,7 @@ window.SKOOL_CATALOG = {
         "2 mini-films de 30 à 60 secondes",
         "Semaine 2 : ton court-métrage de 3 à 5 min",
         "Tu repars avec 3 films et tes workflows",
-        "15 participants maximum"
+        "10 participants maximum"
       ],
       paymentLink: "https://buy.stripe.com/4gMeVf9VogpjcbI2tJ6Ri03",
       best: true
