@@ -171,13 +171,13 @@ function payButtons(f){
   <div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button><span></span></div>`;
   return `${card ? `<div style="display:grid;gap:14px;margin-top:26px">
     <button class="btn btn-lime" id="pay" type="button" style="background:#15803D;box-shadow:0 6px 0 #0A4D24;width:100%;justify-content:center">Payer ${S.eur(price(f))} en une fois <span class="arr">→</span></button>
-    <button class="btn btn-line" id="pay3" type="button" style="width:100%;justify-content:center">Payer en plusieurs fois sans frais <span class="arr">→</span></button>
-    <p class="pp-or" style="margin:0">En plusieurs fois : sur la page suivante, choisis « Klarna » (sous réserve d'acceptation par Klarna).</p>
+    <button class="btn btn-line" id="pay3" type="button" style="width:100%;justify-content:center">Payer en 3 fois sans frais : 3 × ${(Math.round(price(f) / 3 * 100) / 100).toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} € <span class="arr">→</span></button>
+    <p class="pp-or" style="margin:0">En 3 fois : sur la page suivante, choisis « Klarna ». 3 prélèvements, un tous les 30 jours, sous réserve d'acceptation par Klarna.</p>
   </div>` : ""}
   <div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button><span></span></div>
   ${pp ? `<div class="pp-wrap"><p class="pp-or">${card ? "ou" : "Paiement"} avec PayPal, en une fois ou en 4X sans frais</p><div id="pp-btns"></div><div class="pp-msg" data-pp-message data-pp-amount="${price(f)}" data-pp-style-text-color="white"></div></div>` : ""}
   ${ppOn && st.promo.ok ? `<p class="pp-or" style="margin-top:14px">La remise membre Skool s'applique au paiement par carte.</p>` : ""}
-  <p class="secure">🔒 Paiement sécurisé${card ? " avec Stripe : carte, ou en plusieurs fois avec Klarna" : ""}${pp ? (card ? " ou PayPal" : " avec PayPal") : ""}</p>`;
+  <p class="secure">🔒 Paiement sécurisé${card ? " avec Stripe : carte, ou en 3 fois avec Klarna" : ""}${pp ? (card ? " ou PayPal" : " avec PayPal") : ""}</p>`;
 }
 
 /* ---------- PayPal (site sans serveur) ---------- */
