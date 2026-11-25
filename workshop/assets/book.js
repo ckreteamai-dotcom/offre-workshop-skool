@@ -169,7 +169,12 @@ function payButtons(f){
   const pp = ppOn && !st.promo.ok; // remise membre : uniquement par carte (Stripe vérifie le code)
   if (!card && !pp) return `<div class="paysoon"><b>Le paiement en ligne ouvre très bientôt.</b><p>Les réservations s'ouvrent dans quelques jours. Rejoins le canal WhatsApp du Skool pour être prévenu(e) dès l'ouverture et garder ta place.</p><a class="btn btn-lime btn-sm" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener">Être prévenu(e) sur WhatsApp →</a></div>
   <div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button><span></span></div>`;
-  return `<div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button>${card ? `<button class="btn btn-lime" id="pay" style="background:#15803D;box-shadow:0 6px 0 #0A4D24">Payer ${S.eur(price(f))} <span class="arr">→</span></button>` : "<span></span>"}</div>
+  return `${card ? `<div style="display:grid;gap:14px;margin-top:26px">
+    <button class="btn btn-lime" id="pay" type="button" style="background:#15803D;box-shadow:0 6px 0 #0A4D24;width:100%;justify-content:center">Payer ${S.eur(price(f))} en une fois <span class="arr">→</span></button>
+    <button class="btn btn-line" id="pay3" type="button" style="width:100%;justify-content:center">Payer en plusieurs fois sans frais <span class="arr">→</span></button>
+    <p class="pp-or" style="margin:0">En plusieurs fois : sur la page suivante, choisis « Klarna » (sous réserve d'acceptation par Klarna).</p>
+  </div>` : ""}
+  <div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button><span></span></div>
   ${pp ? `<div class="pp-wrap"><p class="pp-or">${card ? "ou" : "Paiement"} avec PayPal, en une fois ou en 4X sans frais</p><div id="pp-btns"></div><div class="pp-msg" data-pp-message data-pp-amount="${price(f)}" data-pp-style-text-color="white"></div></div>` : ""}
   ${ppOn && st.promo.ok ? `<p class="pp-or" style="margin-top:14px">La remise membre Skool s'applique au paiement par carte.</p>` : ""}
   <p class="secure">🔒 Paiement sécurisé${card ? " avec Stripe : carte, ou en plusieurs fois avec Klarna" : ""}${pp ? (card ? " ou PayPal" : " avec PayPal") : ""}</p>`;
@@ -254,7 +259,7 @@ async function pay(){
   const f = S.formula(st.formula), s = S.session(st.session), err = $("#err");
   if (!$("#cgv").checked) { err.textContent = "Coche la case pour confirmer ta réservation."; return; }
   if (S.left(s) <= 0) { err.textContent = "Désolé, cette session vient d'être complète. Choisis une autre date."; return; }
-  const btn = $("#pay"); btn.disabled = true; btn.textContent = "Un instant…";
+  const btn = this instanceof HTMLElement ? this : $("#pay"); btn.disabled = true; btn.textContent = "Un instant…";
   if (S.static) {
     const u = new URL(f.paymentLink);
     if (st.info.email) u.searchParams.set("prefilled_email", st.info.email);
@@ -304,6 +309,7 @@ function bind(){
     go(4);
   };
   const p = $("#pay"); if (p) p.onclick = pay;
+  const p3 = $("#pay3"); if (p3) p3.onclick = pay;
   const ap = $("#applyPromo"); if (ap) ap.onclick = applyPromo;
   const pi = $("#promo"); if (pi) pi.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); applyPromo(); } };
 }
