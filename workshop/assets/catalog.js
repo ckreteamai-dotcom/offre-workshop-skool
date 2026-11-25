@@ -11,7 +11,7 @@ window.SKOOL_CATALOG = {
      Sans serveur : le code n'est jamais écrit en clair, seule son empreinte (hashes) est dans le site.
      Le vrai calcul de la remise est fait par Stripe (code promo identique à créer dans Stripe).
      Avec serveur : le code est vérifié par le serveur (variable PROMO_CODE du fichier .env). */
-  promo: { percent: 40, label: "Code membre Skool", hashes: ["5d9865934e7ceda03cd511a1a46c6c58e992f7e738ac79aecfbb73b552f6709a"] },
+  promo: { percent: 40, label: "Code membre Skool", hashes: ["04d70563009e8aaa094b5df6ceb883af4aed55386a549a21e8be4c74b2f639a5"] },
 
   /* PAIEMENT (site sans serveur, ex. GitHub Pages)
      - Carte : un lien de paiement Stripe par formule (champ paymentLink de chaque formule),
