@@ -44,7 +44,7 @@ window.SKOOL_CATALOG = {
         "Ton workflow documenté et réutilisable"
       ],
       // Stripe Payment Link (optionnel) : collez l'URL ici si vous n'utilisez pas la clé Stripe côté serveur
-      paymentLink: ""
+      paymentLink: "https://buy.stripe.com/fZu00l6Jc5KFb7E7O36Ri01"
     },
     {
       id: "debutant",
