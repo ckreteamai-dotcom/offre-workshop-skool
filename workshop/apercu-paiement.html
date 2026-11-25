@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aperçu du paiement | SKOOL Workshops</title>
+<link rel="stylesheet" href="./assets/style.css">
+<body>
+<main class="wrap" style="max-width:760px;margin:clamp(28px,8vw,100px) auto;padding:24px">
+  <p class="mut">APERÇU · AUCUN ENCAISSEMENT</p>
+  <h1>Choisis ton paiement.</h1>
+  <p>Construire un workflow de production IA · 2 jours · 17–18 décembre 2026</p>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 12px">
+    <button class="btn btn-lime" id="single">Payer 490 € en une fois</button>
+    <button class="btn btn-line" id="split">Demander le paiement en 3 fois</button>
+  </div>
+  <p>Même prix total. Les échéances sont confirmées avant tout paiement.</p>
+  <p id="feedback" role="status" aria-live="polite"></p>
+  <p><a href="./reserver.html">Retour à la page de réservation</a></p>
+</main>
+<script>
+const feedback = document.querySelector('#feedback');
+document.querySelector('#single').onclick = () => {
+  feedback.textContent = 'Sur le parcours réel, ce bouton ouvrirait Stripe. Aucun débit ici.';
+};
+document.querySelector('#split').onclick = () => {
+  feedback.textContent = 'Sur le parcours réel, cette demande serait examinée avant l’envoi d’un échéancier. Aucun message et aucune réservation ici.';
+};
+</script>
+</body>
+</html>
