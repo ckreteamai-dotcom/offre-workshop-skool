@@ -144,11 +144,6 @@ function stepInfo(){
 /* ---------- étape 4 : paiement ---------- */
 function stepPay(){
   const f = S.formula(st.formula), s = S.session(st.session), pr = st.promo;
-  if (new URLSearchParams(location.search).get("test-paiement") === "1" && s?.id === "pf-2026-12-17") {
-    return `<h2>Paiement</h2><p class="mut">Mode test. Aucun débit.</p>
-      <a class="btn btn-lime" style="background:#15803D;box-shadow:0 6px 0 #0A4D24" href="https://buy.stripe.com/test_4gMfZicj6dfY36rbiE3F600">Payer 490 €</a>
-      <div class="nav-step"><button class="btn btn-ghost" id="back" type="button">← Coordonnées</button></div>`;
-  }
   return `<h2>Dernière étape.</h2><p class="mut">Ta place est bloquée dès que le paiement est validé.</p>
   <div class="choice">
     <div class="opt" style="cursor:default"><span class="dot bg-${f.color}">${f.days}j</span><span><h4>${esc(f.name)} · ${S.range(s)}</h4><p>${esc(st.info.firstName)} ${esc(st.info.lastName)} · ${esc(st.info.email)}</p></span><span class="pr">${pr.ok ? `<s>${S.eur(f.price)}</s>` : ""}${S.eur(price(f))}</span></div>
@@ -174,10 +169,10 @@ function payButtons(f){
   const pp = ppOn && !st.promo.ok; // remise membre : uniquement par carte (Stripe vérifie le code)
   if (!card && !pp) return `<div class="paysoon"><b>Le paiement en ligne ouvre très bientôt.</b><p>Les réservations s'ouvrent dans quelques jours. Rejoins le canal WhatsApp du Skool pour être prévenu(e) dès l'ouverture et garder ta place.</p><a class="btn btn-lime btn-sm" href="https://chat.whatsapp.com/BBF6IarQ6EIJTpxFCDZwci" target="_blank" rel="noopener">Être prévenu(e) sur WhatsApp →</a></div>
   <div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button><span></span></div>`;
-  return `<div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button>${card ? `<button class="btn btn-lime" id="pay">Payer par carte ${S.eur(price(f))} <span class="arr">→</span></button>` : "<span></span>"}</div>
+  return `<div class="nav-step"><button class="btn btn-ghost" id="back">← Coordonnées</button>${card ? `<button class="btn btn-lime" id="pay" style="background:#15803D;box-shadow:0 6px 0 #0A4D24">Payer ${S.eur(price(f))} <span class="arr">→</span></button>` : "<span></span>"}</div>
   ${pp ? `<div class="pp-wrap"><p class="pp-or">${card ? "ou" : "Paiement"} avec PayPal, en une fois ou en 4X sans frais</p><div id="pp-btns"></div><div class="pp-msg" data-pp-message data-pp-amount="${price(f)}" data-pp-style-text-color="white"></div></div>` : ""}
   ${ppOn && st.promo.ok ? `<p class="pp-or" style="margin-top:14px">La remise membre Skool s'applique au paiement par carte.</p>` : ""}
-  <p class="secure">🔒 Paiement sécurisé${card ? " par carte avec Stripe" : ""}${pp ? (card ? " ou PayPal" : " avec PayPal") : ""}</p>`;
+  <p class="secure">🔒 Paiement sécurisé${card ? " avec Stripe : carte, ou en plusieurs fois avec Klarna" : ""}${pp ? (card ? " ou PayPal" : " avec PayPal") : ""}</p>`;
 }
 
 /* ---------- PayPal (site sans serveur) ---------- */
