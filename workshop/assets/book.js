@@ -146,7 +146,7 @@ function stepPay(){
   const f = S.formula(st.formula), s = S.session(st.session), pr = st.promo;
   if (new URLSearchParams(location.search).get("test-paiement") === "1" && s?.id === "pf-2026-12-17") {
     return `<h2>Paiement</h2><p class="mut">Mode test. Aucun débit.</p>
-      <a class="btn btn-lime" href="https://buy.stripe.com/test_4gMfZicj6dfY36rbiE3F600">Payer 490 €</a>
+      <a class="btn btn-lime" style="background:#15803D;box-shadow:0 6px 0 #0A4D24" href="https://buy.stripe.com/test_4gMfZicj6dfY36rbiE3F600">Payer 490 €</a>
       <div class="nav-step"><button class="btn btn-ghost" id="back" type="button">← Coordonnées</button></div>`;
   }
   return `<h2>Dernière étape.</h2><p class="mut">Ta place est bloquée dès que le paiement est validé.</p>
