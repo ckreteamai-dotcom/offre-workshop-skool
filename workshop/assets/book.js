@@ -138,7 +138,7 @@ function stepInfo(){
     <label class="full">Ce que tu veux en retirer <textarea name="goal" placeholder="Optionnel : ton projet, tes attentes…">${esc(i.goal)}</textarea></label>`}
     <p class="err full" id="err"></p>
   </form>
-  <div class="nav-step"><button class="btn btn-ghost" id="back">← Date</button><button class="btn btn-lime" id="next3">Passer au paiement <span class="arr">→</span></button></div>`;
+  <div class="nav-step"><button class="btn btn-ghost" id="back">← Date</button><button class="btn btn-lime" id="next3" style="background:#15803D;box-shadow:0 6px 0 #0A4D24">Passer au paiement <span class="arr">→</span></button></div>`;
 }
 
 /* ---------- étape 4 : paiement ---------- */
